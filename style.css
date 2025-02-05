@@ -2316,10 +2316,7 @@ body.device-mobile-optimized .WzbAF8 .mpGTIt {
 }
 
 .FubTgk[aria-disabled="false"] .uDW_Qe {
-    background-color: var(
-        --corvid-background-color,
-        rgba(var(--bg, var(--color_17, color_17)), var(--alpha-bg, 1))
-    );
+    background-color: black;
     border: solid
         var(
             --corvid-border-color,
@@ -2879,8 +2876,7 @@ body.device-mobile-optimized .V5AUxf > :last-child {
 }
 
 .LWbAav {
-    background-color: var(--bg-overlay-color);
-    background-image: var(--bg-gradient);
+    background-color: #401717;
     transition: var(--inherit-transition);
 }
 
@@ -5827,7 +5823,7 @@ wix-media-canvas {
 
 #SITE_FOOTER {
     --shc-mutated-brightness: 0, 0, 0;
-    --bg-overlay-color: rgb(var(--color_15));
+    --bg-overlay-color: #401717;
     --bg-gradient: none;
 }
 
@@ -6042,7 +6038,7 @@ wix-media-canvas {
 
 #comp-ktoo3be7 {
     width: 110px;
-    height: 19px;
+    height: 40px;
 }
 
 /* END STYLABLE DIRECTIVE RULES */
@@ -6540,6 +6536,7 @@ wix-media-canvas {
 #comp-kscj52ks {
     width: 156px;
     height: 42px;
+    margin-top: 70px;
 }
 
 #comp-lxj9y6ri {
@@ -8563,24 +8560,30 @@ wix-media-canvas {
     height: auto;
 }
 
-#comp-kscj52ks .style-kzhv2zmq__root {
+#comp-kscj52ks .style-kzhv2zmq__root:hover {
     -st-extends: StylableButton;
     transition: all 0.2s ease, visibility 0s;
     border-radius: 20px;
     border: 2px solid #bbc7f3;
     background: #ec008c;
+    color: #ffffff !important;
+}
+#comp-kscj52ks .style-kzhv2zmq__root .StylableButton2545352419__label:hover {
+    color: #ffffff !important;
 }
 
 /* START STYLABLE DIRECTIVE RULES */
 
-#comp-kscj52ks .style-kzhv2zmq__root:hover {
+#comp-kscj52ks .style-kzhv2zmq__root {
     background: #ffffff;
     border: 2px solid #ffffff;
+    border-radius: 20px;
+    color: #ffffff;
 }
 
-#comp-kscj52ks .style-kzhv2zmq__root:hover .StylableButton2545352419__label {
+#comp-kscj52ks .style-kzhv2zmq__root .StylableButton2545352419__label {
     font-weight: 700;
-    color: rgba(170, 0, 170, 0.85);
+    color: black;
 }
 
 #comp-kscj52ks .style-kzhv2zmq__root:disabled {
@@ -8608,7 +8611,7 @@ wix-media-canvas {
     font-family: "courier new", courier-ps-w01, courier-ps-w02, courier-ps-w10,
         monospace;
     font-weight: 700;
-    color: #ffffff;
+    color: rgba(170, 0, 170, 0.85);
 }
 
 #comp-kscj52ks .style-kzhv2zmq__root .StylableButton2545352419__icon {
@@ -8806,7 +8809,7 @@ wix-media-canvas {
 }
 
 #comp-j69ku06u {
-    --bg-overlay-color: rgb(var(--color_15));
+    --bg-overlay-color: #401717;
     --bg-gradient: none;
     width: 100%;
     --column-width: 980px;
@@ -8852,7 +8855,7 @@ wix-media-canvas {
 
 #comp-j6dom7zw {
     --fill-layer-image-opacity: 0.45;
-    --bg-overlay-color: rgb(var(--color_15));
+    --bg-overlay-color: #401717;
     --bg-gradient: none;
     width: 100%;
     --column-width: 980px;
@@ -8902,7 +8905,7 @@ wix-media-canvas {
 
 #comp-j6p2kqpi {
     --fill-layer-image-opacity: 0.4;
-    --bg-overlay-color: rgb(var(--color_15));
+    --bg-overlay-color: #401717;
     --bg-gradient: none;
     width: 100%;
     --column-width: 980px;
@@ -9076,7 +9079,7 @@ wix-media-canvas {
 }
 
 #comp-j6f51omz {
-    --bg-overlay-color: rgb(var(--color_15));
+    --bg-overlay-color: #401717;
     --bg-gradient: none;
     width: 100%;
     --column-width: 980px;
@@ -9196,4 +9199,26 @@ wix-media-canvas {
         courier-ps-w02, courier-ps-w10, monospace;
     --label-align: center;
     --label-text-align: center;
+}
+#comp-ktolz19u {
+    opacity: 1 !important;
+}
+.owl-carousel .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.owl-carousel img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.slider-section .owl-carousel .item img {
+    width: 200px; /* Điều chỉnh kích thước theo mong muốn */
+    height: 200px; /* Đảm bảo hình ảnh có cùng chiều cao */
+    object-fit: contain; /* Giữ nguyên tỷ lệ khung hình */
+}
+.slider-section {
+    margin-top: 20px;
+    margin-bottom: 40px;
 }

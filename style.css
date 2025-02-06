@@ -8611,7 +8611,7 @@ wix-media-canvas {
     font-family: "courier new", courier-ps-w01, courier-ps-w02, courier-ps-w10,
         monospace;
     font-weight: 700;
-    color: rgba(170, 0, 170, 0.85);
+    color: black;
 }
 
 #comp-kscj52ks .style-kzhv2zmq__root .StylableButton2545352419__icon {
@@ -9219,6 +9219,6 @@ wix-media-canvas {
     object-fit: contain; /* Giữ nguyên tỷ lệ khung hình */
 }
 .slider-section {
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 40px;
 }

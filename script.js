@@ -8,7 +8,7 @@ $(document).ready(function () {
         autoplayTimeout: 2000,
         autoplayHoverPause: true,
         responsive: {
-            0: { items: 1 },
+            0: { items: 2 },
             600: { items: 3 },
             1000: { items: 5 },
         },
@@ -24,13 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const formData = {
             name: document.querySelector('input[name="name"]').value.trim(),
             email: document.querySelector('input[name="email"]').value.trim(),
-            youtube_channel: document
-                .querySelector('input[name="url"]')
-                .value.trim(),
+            ytb_url: document.querySelector('input[name="url"]').value.trim(),
             subscribers: document
                 .querySelector('input[name="subscribers"]')
                 .value.trim(),
-            channel_location: document
+            location: document
                 .querySelector('input[name="channel-location"]')
                 .value.trim(),
             recaptcha: grecaptcha.getResponse(), // Lấy giá trị từ Google reCAPTCHA
@@ -39,9 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
         // Kiểm tra input không được rỗng
         for (const key in formData) {
             if (!formData[key]) {
-                alert(
-                    `Vui lòng nhập đầy đủ thông tin: ${key.replace("_", " ")}`
-                );
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: `Vui lòng nhập đầy đủ thông tin: ${key.replace(
+                        "_",
+                        " "
+                    )}`,
+                });
+
                 return;
             }
         }
@@ -49,43 +53,72 @@ document.addEventListener("DOMContentLoaded", function () {
         // Kiểm tra email hợp lệ
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(formData.email)) {
-            alert("Email không hợp lệ!");
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Email không hợp lệ!",
+            });
+
             return;
         }
 
         // Kiểm tra subscriber phải là số dương
         if (isNaN(formData.subscribers) || formData.subscribers <= 0) {
-            alert("Số lượng subscriber phải là số dương!");
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Số lượng subscriber phải là số dương!",
+            });
+
             return;
         }
 
         // Kiểm tra reCAPTCHA
         if (!formData.recaptcha) {
-            alert("Vui lòng xác minh reCAPTCHA!");
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Vui lòng xác minh reCAPTCHA!",
+            });
             return;
         }
         console.log(formData);
         // Gửi dữ liệu lên server bằng fetch API
-        fetch("https://your-server-endpoint.com/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-        })
+        fetch(
+            "https://script.google.com/macros/s/AKfycbxVyGIq40ANBNyCP8lkbzc22ysbmVpZ7qyx4ChlEQSRHNVim3mFmSl7beJm_PFCiL5GbA/exec",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            }
+        )
             .then((response) => response.json())
             .then((data) => {
                 if (data.success) {
                     alert("Gửi thành công!");
                     form.reset(); // Reset form sau khi gửi thành công
                     grecaptcha.reset(); // Reset reCAPTCHA
+                    Swal.fire({
+                        icon: "success",
+                        text: "Thanks for submitting! Keep up the good work. We'll get in touch if we can be of help to you.",
+                    });
                 } else {
-                    alert("Gửi thất bại! Vui lòng thử lại.");
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Gửi thất bại! Vui lòng thử lại.",
+                    });
                 }
             })
             .catch((error) => {
                 console.error("Lỗi:", error);
-                alert("Có lỗi xảy ra khi gửi dữ liệu.");
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Có lỗi xảy ra khi gửi dữ liệu.",
+                });
             });
     });
 });

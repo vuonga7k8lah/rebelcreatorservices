@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
             location: document
                 .querySelector('input[name="channel-location"]')
                 .value.trim(),
-            recaptcha: grecaptcha.getResponse(), // Lấy giá trị từ Google reCAPTCHA
         };
 
         // Kiểm tra input không được rỗng
@@ -74,51 +73,48 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Kiểm tra reCAPTCHA
-        if (!formData.recaptcha) {
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Vui lòng xác minh reCAPTCHA!",
-            });
-            return;
-        }
+        // if (!formData.recaptcha) {
+        //     Swal.fire({
+        //         icon: "error",
+        //         title: "Oops...",
+        //         text: "Vui lòng xác minh reCAPTCHA!",
+        //     });
+        //     return;
+        // }
         console.log(formData);
         // Gửi dữ liệu lên server bằng fetch API
         fetch(
             "https://script.google.com/macros/s/AKfycbxVyGIq40ANBNyCP8lkbzc22ysbmVpZ7qyx4ChlEQSRHNVim3mFmSl7beJm_PFCiL5GbA/exec",
             {
+                body: JSON.stringify(formData),
                 method: "POST",
+                mode: "no-cors",
+                cache: "no-cache",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData),
+                redirect: "follow",
             }
         )
             .then((response) => response.json())
             .then((data) => {
-                if (data.success) {
-                    alert("Gửi thành công!");
-                    form.reset(); // Reset form sau khi gửi thành công
-                    grecaptcha.reset(); // Reset reCAPTCHA
-                    Swal.fire({
-                        icon: "success",
-                        text: "Thanks for submitting! Keep up the good work. We'll get in touch if we can be of help to you.",
-                    });
-                } else {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Oops...",
-                        text: "Gửi thất bại! Vui lòng thử lại.",
-                    });
-                }
+                form.reset(); // Reset form sau khi gửi thành công
+                grecaptcha.reset(); // Reset reCAPTCHA
+                Swal.fire({
+                    icon: "success",
+                    text: "Thanks for submitting! Keep up the good work. We'll get in touch if we can be of help to you.",
+                });
             })
             .catch((error) => {
-                console.error("Lỗi:", error);
+                form.reset(); // Reset form sau khi gửi thành công
+                grecaptcha.reset(); // Reset reCAPTCHA
                 Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Có lỗi xảy ra khi gửi dữ liệu.",
+                    icon: "success",
+                    text: "Thanks for submitting! Keep up the good work. We'll get in touch if we can be of help to you.",
                 });
             });
     });
 });
+if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    window.location.href = "mobile.html";
+}

@@ -115,6 +115,4 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
 });
-if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-    window.location.href = "mobile.html";
-}
+

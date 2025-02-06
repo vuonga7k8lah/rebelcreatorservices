@@ -8,7 +8,7 @@ $(document).ready(function () {
         autoplayTimeout: 2000,
         autoplayHoverPause: true,
         responsive: {
-            0: { items: 2 },
+            0: { items: 1 },
             600: { items: 3 },
             1000: { items: 5 },
         },
@@ -115,4 +115,13 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
 });
-
+$(document).ready(function () {
+    $("button[aria-haspopup='true']").click(function () {
+        $(".TINY_MENU").toggleClass("VX3N1s");
+    });
+});
+$(document).ready(function () {
+    $(document).on("click", "#menuItemsTINY_MENU li", function () {
+        $(".TINY_MENU").toggleClass("VX3N1s"); // Ẩn/hiện menu
+    });
+});

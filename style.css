@@ -8137,6 +8137,11 @@ wix-media-canvas {
     --brw: 0px;
     --loader: 0;
 }
+#comp-ks7zt6s03 {
+    text-align: center;
+    font-size: 14px;
+    margin: 20px 0;
+}
 
 #comp-jxafbcxl {
     width: 805px;
@@ -9245,9 +9250,7 @@ wix-media-canvas {
     height: auto;
     border-radius: 10px;
 }
-.owl-stage {
-    margin-top: 30px;
-}
+
 .slider-section .owl-carousel .item img {
     width: 200px; /* Điều chỉnh kích thước theo mong muốn */
     height: 200px; /* Đảm bảo hình ảnh có cùng chiều cao */

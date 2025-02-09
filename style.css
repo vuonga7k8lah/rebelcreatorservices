@@ -2368,10 +2368,7 @@ body:not(.device-mobile-optimized)
 body:not(.device-mobile-optimized)
     .FubTgk[aria-disabled="false"]:hover
     .l7_2fn {
-    color: var(
-        --corvid-hover-color,
-        rgb(var(--txth, var(--color_15, color_15)))
-    );
+    color: black;
 }
 
 .FubTgk[aria-disabled="true"] .uDW_Qe {
@@ -3520,8 +3517,7 @@ body.device-mobile-optimized .PFkO7r {
     width: auto;
 }
 .ycFZFS .K4dlZl {
-    border-left: var(--lnw, 3px) dotted
-        rgba(var(--brd, var(--color_15, color_15)), var(--alpha-brd, 1));
+    border-left: var(--lnw, 3px) dotted black;
     height: 100%;
     width: 100%;
 }
@@ -5092,7 +5088,17 @@ wix-media-canvas {
 #masterPage.landingPage #SITE_FOOTER {
     display: none;
 }
-
+.CJF7A2 {
+    height: 100px;
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    background-color: black;
+}
+.CJF7A2 a > span > span {
+    font-size: 16px !important;
+    font-weight: bold;
+}
 #masterPage.landingPage #SITE_HEADER {
     display: none;
 }
@@ -5961,6 +5967,9 @@ wix-media-canvas {
     --contentPaddingTop: 0px;
     --contentPaddingBottom: 0px;
 }
+#comp-ktolz19u a {
+    margin-left: 104px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
     #comp-ktolz19u:not([data-motion-enter="done"]) {
@@ -6000,7 +6009,7 @@ wix-media-canvas {
 }
 
 #comp-ktoo3be7 .style-kzhkcp9u__root:hover .StylableButton2545352419__label {
-    color: #ec008c;
+    color: #ffffff !important;
 }
 
 #comp-ktoo3be7 .style-kzhkcp9u__root:disabled {
@@ -6038,7 +6047,6 @@ wix-media-canvas {
 
 #comp-ktoo3be7 {
     width: 110px;
-    height: 40px;
 }
 
 /* END STYLABLE DIRECTIVE RULES */
@@ -6063,7 +6071,7 @@ wix-media-canvas {
 }
 
 #comp-ktoo3dao .style-kzho7ozi__root:hover .StylableButton2545352419__label {
-    color: #ec008c;
+    color: #ffffff !important;
 }
 
 #comp-ktoo3dao .style-kzho7ozi__root:disabled {
@@ -6126,7 +6134,7 @@ wix-media-canvas {
 }
 
 #comp-ktoo3fr6 .style-ktoo3fsx1__root:hover .StylableButton2545352419__label {
-    color: #ec008c;
+    color: #ffffff !important;
 }
 
 #comp-ktoo3fr6 .style-ktoo3fsx1__root:disabled {
@@ -6191,7 +6199,7 @@ wix-media-canvas {
 }
 
 #comp-ktont2vl .style-ktoo37uk__root:hover .StylableButton2545352419__label {
-    color: #ec008c;
+    color: #ffffff !important;
 }
 
 #comp-ktont2vl .style-ktoo37uk__root:disabled {
@@ -7112,7 +7120,7 @@ wix-media-canvas {
 [data-mesh-id="comp-ktoohgg1inlineContent-gridContainer"]
     > [id="comp-j6doz3iu"] {
     position: relative;
-    margin: 22px 0px 23px 0;
+    margin: 28px 0px 23px 0;
     left: 100px;
     grid-area: 1 / 1 / 2 / 2;
     justify-self: start;
@@ -8148,6 +8156,29 @@ wix-media-canvas {
     grid-template-rows: repeat(4, min-content) 1fr;
     grid-template-columns: 100%;
 }
+.wixui-text-input__label {
+    color: black !important;
+}
+/* Đổi màu label thành đen */
+.wixui-text-input__label {
+    color: black !important;
+}
+
+/* Đổi màu placeholder thành đen */
+.wixui-text-input__input::placeholder {
+    color: black !important;
+    opacity: 1; /* Giữ màu đen rõ nét */
+}
+
+/* Đổi viền (border) của input thành đen */
+.wixui-text-input__input {
+    border: 1px solid black !important;
+}
+.wixui-text-input__input:focus {
+    border: 2px solid black !important;
+    background-color: #7a7a77 !important;
+    outline: none; /* Loại bỏ viền xanh mặc định */
+}
 
 [data-mesh-id="comp-jxafbcxlinlineContent-gridContainer"]
     > [id="comp-ks7zsgeb"] {
@@ -8565,7 +8596,7 @@ wix-media-canvas {
     transition: all 0.2s ease, visibility 0s;
     border-radius: 20px;
     border: 2px solid #bbc7f3;
-    background: #ec008c;
+    background: black;
     color: #ffffff !important;
 }
 #comp-kscj52ks .style-kzhv2zmq__root .StylableButton2545352419__label:hover {
@@ -8809,7 +8840,7 @@ wix-media-canvas {
 }
 
 #comp-j69ku06u {
-    --bg-overlay-color: #401717;
+    --bg-overlay-color: #ffffff;
     --bg-gradient: none;
     width: 100%;
     --column-width: 980px;
@@ -8855,7 +8886,7 @@ wix-media-canvas {
 
 #comp-j6dom7zw {
     --fill-layer-image-opacity: 0.45;
-    --bg-overlay-color: #401717;
+    --bg-overlay-color: #ffffff;
     --bg-gradient: none;
     width: 100%;
     --column-width: 980px;
@@ -8905,7 +8936,7 @@ wix-media-canvas {
 
 #comp-j6p2kqpi {
     --fill-layer-image-opacity: 0.4;
-    --bg-overlay-color: #401717;
+    --bg-overlay-color: #bfbbb8;
     --bg-gradient: none;
     width: 100%;
     --column-width: 980px;
@@ -9079,7 +9110,7 @@ wix-media-canvas {
 }
 
 #comp-j6f51omz {
-    --bg-overlay-color: #401717;
+    --bg-overlay-color: #ffffff;
     --bg-gradient: none;
     width: 100%;
     --column-width: 980px;
@@ -9206,12 +9237,16 @@ wix-media-canvas {
 .owl-carousel .item {
     display: flex;
     justify-content: center;
+    justify-items: center;
     align-items: center;
 }
 .owl-carousel img {
     width: 100%;
     height: auto;
     border-radius: 10px;
+}
+.owl-stage {
+    margin-top: 30px;
 }
 .slider-section .owl-carousel .item img {
     width: 200px; /* Điều chỉnh kích thước theo mong muốn */
@@ -9221,6 +9256,7 @@ wix-media-canvas {
 .slider-section {
     margin-top: 40px;
     margin-bottom: 40px;
+    background-color: #ffffff;
 }
 /* mobile app */
 /* @media (max-width: 768px) {

@@ -2872,10 +2872,6 @@ body.device-mobile-optimized .V5AUxf > :last-child {
     height: 100%;
 }
 
-.LWbAav {
-    background-color: #401717;
-    transition: var(--inherit-transition);
-}
 
 .K_YxMd,
 .yK6aSC {
@@ -4682,7 +4678,7 @@ wix-media-canvas {
 }
 
 .LWbAav {
-    background-color: var(--bg-overlay-color);
+    background-color: #ffffff;
     background-image: var(--bg-gradient);
     transition: var(--inherit-transition);
 }
